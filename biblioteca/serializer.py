@@ -27,13 +27,11 @@ class PublishingCompanySerializer(serializers.ModelSerializer):
 
 # Joinned routes
 class ListBooksFromAuthorSerializer(serializers.ModelSerializer):
-    author_name = serializers.ReadOnlyField(source='author.name')
     class Meta:
         model = Book
         fields = '__all__'
 
 class ListAuthorsOfBookSerializer(serializers.ModelSerializer):
-    book_title = serializers.ReadOnlyField(source='book.title')
     class Meta:
-        model = Book
-        fields = '__all__'
+        model = Author
+        fields = ['id', 'name']
