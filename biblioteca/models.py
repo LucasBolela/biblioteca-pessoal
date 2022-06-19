@@ -9,8 +9,7 @@ class CreatedUpdated(models.Model):
 
 class PublishingCompany(models.Model):
     name = models.CharField(max_length=30, blank=False, null=False)
-    city = models.CharField(max_length=15, default="")
-    state = models.CharField(max_length=15, default="")
+    state_or_city = models.CharField(max_length=15, default="")
 
     def __str__(self):
         return self.name
